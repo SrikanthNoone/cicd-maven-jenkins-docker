@@ -5,10 +5,18 @@ this project is done in following steps:
 2. Added a Dockerfile to create a docker image
 3. Added a pom.xml file for maven building
 4. WEB-INF file is also added as dependency of maven plugin
+
+
+
+
 The structure of reo in git is:
   src/main/webapp/ in this directory WEB-INF folder and index.html file added
   in WEB-INF folder web.xml file added
   in root directory (master) along with src folder - Dockerfile and pom.xml added
+
+
+
+
 
 Then followed simple steps to clone the git repo into ubuntu instance
 1.Added maven plugin in jenkins 
