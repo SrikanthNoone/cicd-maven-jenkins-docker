@@ -10,12 +10,12 @@ The structure of reo in git is:
   in WEB-INF folder web.xml file added
   in root directory (master) along with src folder - Dockerfile and pom.xml added
 
---Then followed simple steps to clone the git repo into ubuntu instance
---Added maven plugin in jenkins 
---Added docker plugin in jenkins
---maven war file created in instance
---docker image created on base image of tomcat server
---docker container created and accessed via port number 9090
+Then followed simple steps to clone the git repo into ubuntu instance
+1.Added maven plugin in jenkins 
+2.Added docker plugin in jenkins
+3.maven war file created in instance
+4.docker image created on base image of tomcat server
+5.docker container created and accessed via port number 9090
 ================================================================
 web.xml file:
 ------------------
