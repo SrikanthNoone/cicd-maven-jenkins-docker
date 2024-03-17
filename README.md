@@ -16,9 +16,12 @@ Then followed simple steps to clone the git repo into ubuntu instance
 3.maven war file created in instance
 4.docker image created on base image of tomcat server
 5.docker container created and accessed via port number 9090
-================================================================
+
+
+
+
 web.xml file:
-------------------
+
 <!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
@@ -27,9 +30,12 @@ web.xml file:
   <display-name>Archetype Created Web Application</display-name>
 </web-app>
 
-==================================================================
+
+
+
+
 pom.xml file:
--------------
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -59,18 +65,24 @@ pom.xml file:
     </plugins>
   </build>
 </project>
-=====================================================================
+
+
+
+
 
 Dockerfile:
-------------
+
 FROM tomcat:8.0.20-jre8
 MAINTAINER Srikanth <ashok@oracle.com>
 EXPOSE 8080
 COPY target/maven-new.war /usr/local/tomcat/webapps/maven-new.war
-========================================================================
+
+
+
+
 
 index.html:
-------------
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,10 +141,12 @@ index.html:
     </footer>
 </body>
 </html>
-=======================================================================
+
+
+
+
 
 Jenkins pipeline script:
----------------------------
 pipeline {
     agent any
     tools{
@@ -164,7 +178,6 @@ pipeline {
         }
     }
 }
-==============================================================================
 
 
 
