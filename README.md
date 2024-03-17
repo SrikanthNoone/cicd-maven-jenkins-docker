@@ -131,6 +131,41 @@ index.html:
 </html>
 =======================================================================
 
+Jenkins pipeline script:
+---------------------------
+pipeline {
+    agent any
+    tools{
+        maven 'mvn3'
+    }
+
+    stages {
+        stage('git clone') {
+            steps {
+                git branch: 'main', url: 'https://github.com/SrikanthNoone/maven-new.git'
+            }
+        }
+        stage('maven build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+         stage('docker build') {
+            steps {
+                sh 'docker build -t image .'
+            }
+        }
+        stage('docker container') {
+            steps {
+                sh 'docker stop image-container'
+                sh 'docker rm image-container'
+                sh 'docker run -d -p 9090:8080 --name image-container image'
+            }
+        }
+    }
+}
+==============================================================================
+
 
 
 Successfully accessed web app from docker container..... 
